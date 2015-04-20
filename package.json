@@ -1,6 +1,6 @@
 {
   "name": "passport-foursquare-token",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Passport strategy for authenticating with Foursquare via OAuth2 access tokens",
   "main": "index.js",
   "scripts": {
