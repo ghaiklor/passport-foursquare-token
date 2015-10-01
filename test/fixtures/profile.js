@@ -1,4 +1,4 @@
-{
+export default JSON.stringify({
   "meta": {"code": 200},
   "notifications": [
     {
@@ -25,4 +25,4 @@
       }
     }
   }
-}
+});
