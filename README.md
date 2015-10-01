@@ -1,6 +1,12 @@
 # passport-foursquare-token
 
-![Build Status](https://img.shields.io/travis/ghaiklor/passport-foursquare-token.svg) ![Coverage](https://img.shields.io/coveralls/ghaiklor/passport-foursquare-token.svg) ![Downloads](https://img.shields.io/npm/dm/passport-foursquare-token.svg) ![npm version](https://img.shields.io/npm/v/passport-foursquare-token.svg) ![dependencies](https://img.shields.io/david/ghaiklor/passport-foursquare-token.svg) ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/passport-foursquare-token.svg) ![License](https://img.shields.io/npm/l/passport-foursquare-token.svg)
+![Build Status](https://img.shields.io/travis/ghaiklor/passport-foursquare-token.svg)
+![Coverage](https://img.shields.io/coveralls/ghaiklor/passport-foursquare-token.svg)
+![Downloads](https://img.shields.io/npm/dm/passport-foursquare-token.svg)
+![npm version](https://img.shields.io/npm/v/passport-foursquare-token.svg)
+![dependencies](https://img.shields.io/david/ghaiklor/passport-foursquare-token.svg)
+![dev dependencies](https://img.shields.io/david/dev/ghaiklor/passport-foursquare-token.svg)
+![License](https://img.shields.io/npm/l/passport-foursquare-token.svg)
 
 [Passport](http://passportjs.org/) strategy for authenticating with Foursquare access tokens using the OAuth 2.0 API.
 
@@ -57,7 +63,11 @@ module.exports = {
 };
 ```
 
-The POST request to this route should include a JSON object with the keys `access_token` and optionally, `refresh_token` set to the credentials you receive from Foursquare.
+The request to this route should include a GET or POST data with the keys `access_token` and optionally, `refresh_token` set to the credentials you receive from Foursquare.
+
+```
+GET /auth/foursquare?access_token=<TOKEN>
+```
 
 ## Issues
 
