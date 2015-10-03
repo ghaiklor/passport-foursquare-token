@@ -12,21 +12,17 @@ import { OAuth2Strategy, InternalOAuthError } from 'passport-oauth';
  * - clientSecret      Secret used to establish ownership of the consumer key
  * - passReqToCallback If need, pass req to verify callback
  *
- * Example:
- *     passport.use(new FoursquareTokenStrategy({
- *           clientID: '123-456-789',
- *           clientSecret: 'shhh-its-a-secret',
- *           passReqToCallback: true
- *       }, function(req, accessToken, refreshToken, profile, next) {
- *              User.findOrCreate(..., function (error, user) {
- *                  next(error, user);
- *              });
- *          }
- *       ));
- *
  * @param {Object} _options
  * @param {Function} _verify
- * @constructor
+ * @example
+ * passport.use(new FoursquareTokenStrategy({
+ *   clientID: '123456789',
+ *   clientSecret: 'shhh-its-a-secret'
+ * }), function(accessToken, refreshToken, profile, next) {
+ *   User.findOrCreate({foursquareId: profile.id}, function(error, user) {
+ *     next(error, user);
+ *   })
+ * })
  */
 export default class FoursquareTokenStrategy extends OAuth2Strategy {
   constructor(_options, _verify) {
@@ -44,6 +40,7 @@ export default class FoursquareTokenStrategy extends OAuth2Strategy {
     this._profileURL = options.profileURL || 'https://api.foursquare.com/v2/users/self';
     this._apiVersion = options.apiVersion || '20140308';
     this._passReqToCallback = options.passReqToCallback;
+
     this._oauth2.setAccessTokenName("oauth_token");
   }
 

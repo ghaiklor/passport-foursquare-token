@@ -3,6 +3,7 @@
 ![Build Status](https://img.shields.io/travis/ghaiklor/passport-foursquare-token.svg)
 ![Coverage](https://img.shields.io/coveralls/ghaiklor/passport-foursquare-token.svg)
 ![Downloads](https://img.shields.io/npm/dm/passport-foursquare-token.svg)
+![Downloads](https://img.shields.io/npm/dt/passport-foursquare-token.svg)
 ![npm version](https://img.shields.io/npm/v/passport-foursquare-token.svg)
 ![dependencies](https://img.shields.io/david/ghaiklor/passport-foursquare-token.svg)
 ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/passport-foursquare-token.svg)
@@ -27,6 +28,8 @@ The Foursquare authentication strategy authenticates users using a Foursquare ac
 The strategy requires a `verify` callback, which accepts these credentials and calls `next` providing a user, as well as `options` specifying a app ID and app secret.
 
 ```javascript
+var FoursquareTokenStrategy = require('passport-foursquare-token');
+
 passport.use(new FoursquareTokenStrategy({
     clientID: FOURSQUARE_CLIENT_ID,
     clientSecret: FOURSQUARE_CLIENT_SECRET,
